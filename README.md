@@ -55,8 +55,8 @@ Then, you can retrieve textual data and post information (user, date, reactions/
 ## 🎥 Demo <a name = "demo"></a>
 
 <p align="center">
-    <img src="media/scrape.gif" style="max-height: 300px">
-    <img src="media/publish.gif" style="max-height: 300px">
+    <img src="media/scrape.gif" height="300px">
+    <img src="media/publish.gif" height="300px">
 </p>
 
 You can also generate statistics with [built-in functions]() and [template]():
