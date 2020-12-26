@@ -20,16 +20,6 @@
 <br> 
 </p>
 
-## 📝 Table of Contents
-
-- [About](#about)
-- [Demo / Working](#demo)
-- [How it works](#working)
-- [Usage](#usage)
-- [Getting Started](#getting_started)
-- [Built Using](#built_using)
-- [Authors](#authors)
-
 ## ⚠️ Disclaimer <a name = "disclaimer"></a>
 
 ***Use only this project with people that consent to share personal data, or data publicly available. Hence, the developers of this tool won't be responsible for any misuse of data collected using this tool.*** 
@@ -55,8 +45,8 @@ Then, you can retrieve textual data and post information (user, date, reactions/
 ## 🎥 Demo <a name = "demo"></a>
 
 <p align="center">
-    <img src="media/scrape.gif" style="max-height: 300px">
-    <img src="media/publish.gif" style="max-height: 300px">
+    <img src="media/scrape.gif" height="300px">
+    <img src="media/publish.gif" height="300px">
 </p>
 
 You can also generate statistics with [built-in functions]() and [template]():
