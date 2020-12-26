@@ -54,18 +54,10 @@ Then, you can retrieve textual data and post information (user, date, reactions/
 
 ## 🎥 Demo <a name = "demo"></a>
 
-<div class="row">
-    <div class="col-md" markdown="1" align="center">
-        <b>Scrape <code>Posts</code>, <code>Reactions</code>, <code>Comments</code> etc.</b>
-        <br>
-        <img src="media/scrape.gif" style="max-height: 300px">
-    </div>
-    <div class="col-md" markdown="1" align="center">
-        <b>Publish and Edit a <code>Post</code></b>
-        <br>
-        <img src="media/publish.gif" style="max-height: 300px">
-    </div>
-</div>
+<p align="center">
+    <img src="media/scrape.gif" style="max-height: 300px">
+    <img src="media/publish.gif" style="max-height: 300px">
+</p>
 
 You can also generate statistics with [built-in functions]() and [template]():
 
@@ -147,8 +139,6 @@ pip install NameOfPackage
 
 ## 🎈 Usage <a name = "usage"></a>
 
-This package can be configured directly from a config file, or you can create your own scrape workflow using the API.
-
 #### ⚠️ Warning !
 
 > To block scraping process and protect user's data, facebook uses dynamic CSS sheets. Thus, when a facebook page is refreshed or loaded, the HTML elements id change over time. To bypass this issue, this package uses a table of known elements, so the bot can be aware when an id changed in the CSS when a page refreshes.
@@ -197,58 +187,6 @@ comments = api.get_comments("your_group_id", "your_post_id")
 # To retrieve reactions
 reactions = api.get_reactions("your_post_id")
 ```
-
-### Configuration
-
-Edit the `config.py` file if you wish to scrape data using the main functionalities.
-You will need to provide your credentials, the group id, template etc.
-
-The `config.py` file should look like this:
-
-```python
-# Modify this with reaction url
-REACTION2HREF = {
-    "LIKE":  "/ufi/reaction/profile/browser/?ft_ent_identifier=",
-    "LOVE":  "/ufi/reaction/profile/browser/?ft_ent_identifier=",
-    "CARE":  "/ufi/reaction/profile/browser/?ft_ent_identifier=",
-    "AHAH":  "/ufi/reaction/profile/browser/?ft_ent_identifier=",
-    "WOW":   "/ufi/reaction/profile/browser/?ft_ent_identifier=",
-    "SAD":   "/ufi/reaction/profile/browser/?ft_ent_identifier=",
-    "ANGER": "/ufi/reaction/profile/browser/?ft_ent_identifier="
-}
-
-# Credentials for the account used for scraping
-EMAIL = "your_email"
-PASSWORD = "your_password"
-
-# Credentials for the account used for publishing
-POST_EMAIL = "your_email"
-POST_PASSWORD = "your_password"
-
-GROUP_ID = "group_id"
-POST_GROUP_ID = "group_id"
-
-# Template used once the statistics are retrieved
-TEMPLATE = """👑 <<BOLD-SERIF>>Memes Actus<<BOLD-SERIF>> 👑
-
-Just an example.
-
-🔥 <<BOLD>>Global Rank<<BOLD>> 🔥
-
-🏅 <<BOLD-ITALIC>>Best Memes<<BOLD-ITALIC>>
-🥇 <<TOP1-BEST-POST-REACTION>>
-🥈 <<TOP2-BEST-POST-REACTION>>
-🥉 <<TOP3-BEST-POST-REACTION>>
-"""
-```
-
-Then, run the `main.py` script.
-
-```
-python main.py
-```
-
-This script will extract all posts in the group `GROUP_ID` and publish the statistics using the template `TEMPLATE` in the group `POST_GROUP_ID`.
 
 ### Statistics
 
@@ -302,16 +240,41 @@ You can also use both together: ``<<BOLD>><<TOP1-BEST-POST-REACTION>><<BOLD>>``
 
 ```python
 template = """
-🔥 <<BOLD>>Global Rank<<BOLD>> 🔥
+👑 <<BOLD-SERIF>>Hall Of Fame<<BOLD-ITALIC>> 👑  
+Here is a template example for a meme group.
 
-🏅 <<BOLD-ITALIC>>Best Memes<<BOLD-ITALIC>>
-🥇 <<TOP1-BEST-POST-REACTION>>
-🥈 <<TOP2-BEST-POST-REACTION>>
-🥉 <<TOP3-BEST-POST-REACTION>>
+🔥 <<BOLD>>Rank<<BOLD>> 🔥  
+
+🏅 <<BOLD-ITALIC>>Best Memes<<BOLD-ITALIC>>  
+🥇 <<TOP1-BEST-POST-REACTION>>  
+🥈 <<TOP2-BEST-POST-REACTION>>   
+🥉 <<TOP3-BEST-POST-REACTION>>  
+
+𝑒𝑡𝑐...
+
+🔥 <<BOLD>>Honors<<BOLD>> 🔥
+
+📈 <<BOLD-ITALIC>>Most Active<<BOLD-ITALIC>>      
+🥇 <<TOP1-POST-COUNT>>  
+🥈 <<TOP2-POST-COUNT>>  
+🥉 <<TOP3-POST-COUNT>>   
+
+𝑒𝑡𝑐...
+
+🔥 <<BOLD>>Reactions<<BOLD>> 🔥  
+
+😆 <<BOLD-ITALIC>>Funniest<<BOLD-ITALIC>>  
+🥇 <<TOP1-REACTION-AHAH>>  
+🥈 <<TOP2-REACTION-AHAH>>  
+🥉 <<TOP3-REACTION-AHAH>>  
+
+𝑒𝑡𝑐...
+
+🕙 Message generated at <<DATE-NOW>> 
 """
 ```
 
-Modify the ``config.py`` file to see changes or use the API:
+Then,
 
 ```python
 from halloffame import apply_template, get_top_stats

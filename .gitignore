@@ -127,7 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-*.ipynb
 *.exe
 *.data
 *.json
@@ -138,3 +137,5 @@ driver/
 checkpoints/
 notebooks/
 main.py
+*Test*
+*test*
