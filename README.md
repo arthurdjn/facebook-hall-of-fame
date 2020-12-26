@@ -20,16 +20,6 @@
 <br> 
 </p>
 
-## 📝 Table of Contents
-
-- [About](#about)
-- [Demo / Working](#demo)
-- [How it works](#working)
-- [Usage](#usage)
-- [Getting Started](#getting_started)
-- [Built Using](#built_using)
-- [Authors](#authors)
-
 ## ⚠️ Disclaimer <a name = "disclaimer"></a>
 
 ***Use only this project with people that consent to share personal data, or data publicly available. Hence, the developers of this tool won't be responsible for any misuse of data collected using this tool.*** 
