@@ -131,8 +131,6 @@ dmypy.json
 *.exe
 *.data
 *.json
-*.jpg
-*.png
 *.vscode
 config.py
 
