@@ -127,3 +127,16 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+*.ipynb
+*.exe
+*.data
+*.json
+*.jpg
+*.png
+*.vscode
+config.py
+
+driver/
+checkpoints/
+notebooks/
+main.py
